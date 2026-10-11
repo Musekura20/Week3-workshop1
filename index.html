@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Navbar</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body class="bg-slate-100">
+
+  <nav class="flex flex-wrap items-center justify-between bg-slate-900 px-4 py-3 text-white">
+    <a href="#" class="rounded text-xl font-bold hover:text-sky-400 focus:ring-2 focus:ring-sky-400">
+      MyBrand
+    </a>
+
+    <!-- Hamburger button: shows on mobile, hidden from md up -->
+    <button id="menu-btn" class="rounded px-3 py-2 hover:bg-slate-700 focus:ring-2 focus:ring-sky-400 md:hidden">
+      <i id="menu-icon" class="fa-solid fa-bars text-xl"></i>
+    </button>
+
+    <!-- Links -->
+    <div id="menu" class="mt-3 hidden w-full flex-col gap-1 border-t border-slate-700 md:mt-0 md:flex md:w-auto md:flex-row md:border-0">
+      <a href="#" class="block rounded px-3 py-2 hover:bg-slate-700 hover:text-sky-400 focus:ring-2 focus:ring-sky-400">Home</a>
+      <a href="#" class="block rounded px-3 py-2 hover:bg-slate-700 hover:text-sky-400 focus:ring-2 focus:ring-sky-400">About</a>
+      <a href="#" class="block rounded px-3 py-2 hover:bg-slate-700 hover:text-sky-400 focus:ring-2 focus:ring-sky-400">Services</a>
+      <a href="#" class="block rounded px-3 py-2 hover:bg-slate-700 hover:text-sky-400 focus:ring-2 focus:ring-sky-400">Contact</a>
+    </div>
+
+  </nav>
+
+  <h1 class="p-6 text-3xl font-bold">Welcome to MyBrand</h1>
+
+  <script>
+    const button = document.getElementById("menu-btn");
+    const menu = document.getElementById("menu");
+    const icon = document.getElementById("menu-icon");
+
+    button.addEventListener("click", function () {
+      menu.classList.toggle("hidden");     
+      icon.classList.toggle("fa-bars");     
+      icon.classList.toggle("fa-xmark");
+    });
+  </script>
+</body>
+</html>
